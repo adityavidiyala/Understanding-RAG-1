@@ -26,7 +26,7 @@ db = Chroma(
 )
 
 # 3. Search for relevant documents
-query = "What was NVIDIA's first graphics accelerator called?"
+query = "How much did Microsoft pay to acquire GitHub?"
 
 retriever = db.as_retriever(search_kwargs={"k": 5})
 
@@ -42,10 +42,11 @@ retriever = db.as_retriever(search_kwargs={"k": 5})
 relevant_docs = retriever.invoke(query)
 
 print(f"User Query: {query}")
-print("--- Context Found ---")
-for i, doc in enumerate(relevant_docs, 1):
-    print(f"Document {i}: (Source: {doc.metadata.get('source', 'Unknown')})")
-    print(f"{doc.page_content}\n")
+# print("--- Context Found ---")
+# for i, doc in enumerate(relevant_docs, 1):
+#     print(f"Document {i}: (Source: {doc.metadata.get('source', 'Unknown')})")
+#     print(f"{doc.page_content}\n")
+
 
 
 # Create the combined input (Context + Query)
@@ -70,6 +71,6 @@ messages = [
 # Invoke the model
 result = model.invoke(messages)
 
-print("\n--- Generated Response (via Groq) ---")
+print("\n--- Generated Response---")
 print("Content only:")
 print(result.content)

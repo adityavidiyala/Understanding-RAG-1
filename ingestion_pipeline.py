@@ -56,7 +56,6 @@ def split_documents(documents, chunk_size=800, chunk_overlap=200):
     chunks = text_splitter.split_documents(documents)
     
     if chunks:
-    
         for i, chunk in enumerate(chunks[:5]):
             print(f"\n--- Chunk {i+1} ---")
             print(f"Source: {chunk.metadata['source']}")
