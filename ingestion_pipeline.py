@@ -8,7 +8,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 from langchain_huggingface import HuggingFaceEmbeddings
 import uuid
 from typing import List, Dict, Any, Tuple
-from dotenv import load_dotenv
+from dotenv import load_dotenv 
 
 load_dotenv()
 
